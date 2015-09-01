@@ -40,7 +40,7 @@ define('DB_NAME', getenv('DB_NAME'));
 define('DB_USER', getenv('DB_USER'));
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /** MySQL hostname */
 define('DB_HOST', getenv('DB_HOST'));
@@ -54,8 +54,8 @@ define('DB_COLLATE', '');
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/' . getenv('WP_CONTENT_DIR') ?: 'wp-content' );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/' . getenv('WP_CONTENT_DIR') ?: 'wp-content' );
 
 /**
  * URLs
@@ -123,13 +123,6 @@ define('WP_DEBUG', false);
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
-/**
- * Change the wp-content folder name
- */
-
-// define('WP_CONTENT_FOLDERNAME', getenv('WP_CONTENT_FOLDERNAME') ?: 'assets');
-// define('WP_CONTENT_DIR', ABSPATH . 'assets') ;
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

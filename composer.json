@@ -26,7 +26,12 @@
         }
     ],
     "extra": {
-        "wordpress-install-dir": "wp"
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "assets/plugins/{$name}/": ["type:wordpress-plugin"],
+            "assets/themes/{$name}/": ["type:wordpress-theme"],
+            "assets/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
