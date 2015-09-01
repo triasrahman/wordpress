@@ -1,0 +1,33 @@
+{
+    "name": "triasrahman/wordpress",
+    "description": "Cool wordpress boilerplate using Composer.",
+    "keywords": ["wordpress", "dotenv", "boilerplate"],
+    "license": "MIT",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "johnpbloch/wordpress": "^4.3",
+        "vlucas/phpdotenv": "^2.1@dev",
+        "fancyguy/wordpress-monolog": "dev-master",
+        "wpackagist-theme/twentyfifteen": "^1.3",
+        "wpackagist-plugin/jetpack": "^3.6",
+        "wpackagist-plugin/akismet": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "Trias Nur Rahman",
+            "email": "contact@triasrahman.com"
+        }
+    ],
+    "extra": {
+        "wordpress-install-dir": "wp"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
